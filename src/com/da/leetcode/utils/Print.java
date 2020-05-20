@@ -25,6 +25,10 @@ public class Print {
 //        else{
 //            System.out.println("需要维护类型：" + object.getClass());
 //        }
+        if (object == null){
+            System.out.println("NULL");
+            return;
+        }
 
         if(object.getClass().isArray()){
             StringBuilder strb = new StringBuilder();

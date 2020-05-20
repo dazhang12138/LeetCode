@@ -2,7 +2,8 @@ package com.da.leetcode.one;
 
 import com.da.leetcode.utils.Print;
 
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Da
@@ -34,11 +35,12 @@ public class TwoSum_1 {
      * @return 数组下标
      */
     public static int[] twoSum(int[] nums, int target) {
+        Map<Integer,Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            for (int j = i; j < nums.length; j++){
-                if(j != i && nums[j] == target - nums[i]){
-                    return new int[]{i,j};
-                }
+            if (map.containsKey(target - nums[i]) && map.get(target - nums[i]) != i){
+                return new int[]{map.get(target - nums[i]),i};
+            }else{
+                map.put(nums[i],i);
             }
         }
         return null;
