@@ -29,14 +29,8 @@ public class Print {
                 }
             }
             System.out.println(strb.toString());
-        }else if(object instanceof List
-                || object instanceof Map
-                || object instanceof String
-                || object instanceof ListNode){
-            //String;List;Map
+        }else{
             System.out.println(object.toString());
-        } else{
-            System.out.println("需要维护类型：" + object.getClass());
         }
     }
 
