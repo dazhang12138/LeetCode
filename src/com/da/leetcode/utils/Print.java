@@ -11,20 +11,6 @@ import java.util.*;
 public class Print {
 
     public static <T> void printObject(T object){
-//        if(object instanceof String){
-//            System.out.println(object);
-//        }else if(object instanceof List){
-//            ((List) object).stream().forEach(System.out::println);
-//        }else if(object instanceof Map){
-//            ((Map) object).entrySet().stream().forEach(item -> {
-//                System.out.println("key:" + item + ";value:" + ((Map) object).get(item));
-//            });
-//        }else if(object instanceof Arrays){
-//            Arrays.asList(object).stream().forEach(System.out::println);
-//        }
-//        else{
-//            System.out.println("需要维护类型：" + object.getClass());
-//        }
         if (object == null){
             System.out.println("NULL");
             return;
@@ -43,10 +29,13 @@ public class Print {
                 }
             }
             System.out.println(strb.toString());
-        }else if(object instanceof List || object instanceof Map || object instanceof String){
+        }else if(object instanceof List
+                || object instanceof Map
+                || object instanceof String
+                || object instanceof ListNode){
             //String;List;Map
             System.out.println(object.toString());
-        }else{
+        } else{
             System.out.println("需要维护类型：" + object.getClass());
         }
     }
