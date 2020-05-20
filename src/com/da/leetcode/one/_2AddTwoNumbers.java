@@ -7,7 +7,7 @@ import com.da.leetcode.utils.Print;
  * @author Da
  * @date 2020/5/20 13:54
  */
-public class AddTwoNumbers_2 {
+public class _2AddTwoNumbers {
     public static void main(String[] args) {
         ListNode l1 = new ListNode(2);
         ListNode l12 = new ListNode(4);

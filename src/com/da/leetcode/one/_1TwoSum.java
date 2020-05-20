@@ -9,7 +9,7 @@ import java.util.Map;
  * @author Da
  * @date 2020/5/20 10:54
  */
-public class TwoSum_1 {
+public class _1TwoSum {
     public static void main(String[] args) {
         Print.printObject(twoSum(new int[]{2,7,11,15},9));
         Print.printObject(twoSum(new int[]{3,2,4},6));
