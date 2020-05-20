@@ -34,22 +34,13 @@ public class TwoSum_1 {
      * @return 数组下标
      */
     public static int[] twoSum(int[] nums, int target) {
-        int[] backInteger = new int[2];
         for (int i = 0; i < nums.length; i++) {
-            backInteger[0] = i;
-            for (int j = 0; j < nums.length; j++){
-                if(j == i){
-                    continue;
+            for (int j = i; j < nums.length; j++){
+                if(j != i && nums[j] == target - nums[i]){
+                    return new int[]{i,j};
                 }
-                if(nums[j] == target - nums[i]){
-                    backInteger[1] = j;
-                    break;
-                }
-            }
-            if(backInteger[0] != backInteger[1] && nums[backInteger[0]] + nums[backInteger[1]] == target){
-                break;
             }
         }
-        return backInteger;
+        return null;
     }
 }
