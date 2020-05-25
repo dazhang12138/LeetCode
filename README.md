@@ -23,3 +23,7 @@
 | 编号 |leetCode题目名称| git地址 | leetCode地址 |
 |:-|:- | :- | :- |
 |6|Z字形变换|[https://github.com/dazhang12138/LeetCode/blob/master/src/com/da/leetcode/one/_6ZigZagConversion.java](https://github.com/dazhang12138/LeetCode/blob/master/src/com/da/leetcode/one/_6ZigZagConversion.java)|[https://leetcode-cn.com/problems/zigzag-conversion/](https://leetcode-cn.com/problems/zigzag-conversion/)|
+|7|整数反转|[https://github.com/dazhang12138/LeetCode/blob/master/src/com/da/leetcode/one/_7ReverseInteger.java](https://github.com/dazhang12138/LeetCode/blob/master/src/com/da/leetcode/one/_7ReverseInteger.java)|[https://leetcode-cn.com/problems/reverse-integer/](https://leetcode-cn.com/problems/reverse-integer/)|
+
+
+----------
