@@ -17,3 +17,9 @@
 
 
 ----------
+
+## 更新时间：2020年05月25日##
+
+| 编号 |leetCode题目名称| git地址 | leetCode地址 |
+|:-|:- | :- | :- |
+|6|Z字形变换|[https://github.com/dazhang12138/LeetCode/blob/master/src/com/da/leetcode/one/_6ZigZagConversion.java](https://github.com/dazhang12138/LeetCode/blob/master/src/com/da/leetcode/one/_6ZigZagConversion.java)|[https://leetcode-cn.com/problems/zigzag-conversion/](https://leetcode-cn.com/problems/zigzag-conversion/)|
