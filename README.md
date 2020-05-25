@@ -8,10 +8,6 @@
 
 ## 更新时间：2020年05月20日##
 
-<style>
-.bh : width=10%
-</style>
-
 | 编号 |leetCode题目名称| git地址 | leetCode地址 |
 |:-|:- | :- | :- |
 | 1 | 两数之和 |[https://github.com/dazhang12138/LeetCode/blob/master/src/com/da/leetcode/one/_1TwoSum.java](https://github.com/dazhang12138/LeetCode/blob/master/src/com/da/leetcode/one/_1TwoSum.java) | [https://leetcode-cn.com/problems/two-sum/](https://leetcode-cn.com/problems/two-sum/) |
