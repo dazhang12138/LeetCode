@@ -44,11 +44,17 @@ public class _7ReverseInteger {
         try {
             boolean flag = (x < 0) ? false : true;
             x = flag ? x : -x;
-            StringBuilder stringBuilder = new StringBuilder(String.valueOf(x));
-            Integer back = new Integer(stringBuilder.reverse().toString());
+            String s = String.valueOf(x);
+            char[] cs = new char[s.length()];
+            int i = 0;
+            while (i < (s.length()+1)/2){
+                cs[i] = s.charAt(s.length()-i-1);
+                cs[s.length()-i-1] = s.charAt(i);
+                i++;
+            }
+            Integer back = new Integer(String.valueOf(cs));
             return flag ? back : -back;
         }catch (Exception e){
-            e.printStackTrace();
             return 0;
         }
     }
