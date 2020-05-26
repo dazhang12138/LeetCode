@@ -27,3 +27,12 @@
 
 
 ----------
+
+## 更新时间：2020年05月26日##
+
+| 编号 |leetCode题目名称| git地址 | leetCode地址 |
+|:-|:- | :- | :- |
+|8|字符串转化整数(atoi)|[https://github.com/dazhang12138/LeetCode/blob/master/src/com/da/leetcode/one/_8StringToInteger_atoi.java](https://github.com/dazhang12138/LeetCode/blob/master/src/com/da/leetcode/one/_8StringToInteger_atoi.java)|[https://leetcode-cn.com/problems/string-to-integer-atoi](https://leetcode-cn.com/problems/string-to-integer-atoi)|
+
+
+----------
