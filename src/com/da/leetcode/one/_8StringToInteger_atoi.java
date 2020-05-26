@@ -78,9 +78,7 @@ public class _8StringToInteger_atoi {
         for (int i = 0; i < str.length(); i++){
             char c = str.charAt(i);
             if(c == 32){
-                if(flag == 0){
-                    continue;
-                }else{
+                if(flag != 0){
                     break;
                 }
             }else if( c == 43 || c == 45){
@@ -99,13 +97,9 @@ public class _8StringToInteger_atoi {
         try {
             return Integer.valueOf(stringBuilder.toString());
         }catch (NumberFormatException e){
-            if(stringBuilder.length() == 0){
+            if(stringBuilder.length() == 0 || (stringBuilder.length() == 1 && (stringBuilder.charAt(0) == 43 || stringBuilder.charAt(0) == 45))){
                 return 0;
-            }
-            if(stringBuilder.length() == 1 && (stringBuilder.charAt(0) == 43 || stringBuilder.charAt(0) == 45)){
-                return 0;
-            }
-            if(stringBuilder.charAt(0) == 45){
+            }else if(stringBuilder.charAt(0) == 45){
                 return Integer.MIN_VALUE;
             }else{
                 return Integer.MAX_VALUE;
