@@ -25,9 +25,14 @@ public class test {
 //            System.out.println(stringTokenizer.nextToken());
 //        }
 
-        StringBuilder stringBuilder[] = new StringBuilder[2];
-        stringBuilder[0].append("123");
-        System.out.println(stringBuilder[0]);
+        char c = '9';
+        System.out.println(Integer.valueOf(c));
+
+//        Integer integer = Integer.valueOf("+123");
+//        System.out.println(integer);
+//        StringBuilder stringBuilder[] = new StringBuilder[2];
+//        stringBuilder[0].append("123");
+//        System.out.println(stringBuilder[0]);
 
     }
 }

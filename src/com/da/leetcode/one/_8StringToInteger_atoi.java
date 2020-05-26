@@ -1,6 +1,7 @@
 package com.da.leetcode.one;
 
 import com.da.leetcode.utils.Print;
+import org.omg.PortableInterceptor.INACTIVE;
 
 /**
  * @author Da
@@ -9,7 +10,8 @@ import com.da.leetcode.utils.Print;
 public class _8StringToInteger_atoi {
 
     public static void main(String[] args) {
-        Print.printObject(myAtoi("2147483648"));
+        Print.printObject(myAtoi("+"));
+//        Print.printObject(myAtoi("2147483648"));
 //        Print.printObject(myAtoi("4"));
 //        Print.printObject(myAtoi("  "));
 //        Print.printObject(myAtoi("42"));
@@ -68,43 +70,46 @@ public class _8StringToInteger_atoi {
      * @return 转换成整数
      */
     public static int myAtoi(String str) {
-        str = str.trim();
-        if("".equals(str)){
-            return 0;
-        }
-        String head = str.substring(0,1);
-        int flag = 0;
-        try {
-            Integer.valueOf(head);
-        }catch (NumberFormatException e){
-            //head 转为 Integer 失败表示头为非数字
-            if("-".equals(head)){
-                flag = -1;
-            }else if("+".equals(head)){
-                flag = 1;
-            }else{
-                //如果第一个字符不是-/+或者数字则返回0
-                return 0;
-            }
-        }
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = (flag == 0 ? 0 : 1); i < str.length(); i++){
-            try {
-                stringBuilder.append(Integer.valueOf(str.substring(i,i+1)));
-            }catch (NumberFormatException e){
-                //第i个字符转换 Integer 失败跳出循环
+        // 0 : 空阶段
+        // 1 : 符号阶段
+        // 2 : 数字阶段
+        int flag = 0;
+        for (int i = 0; i < str.length(); i++){
+            char c = str.charAt(i);
+            if(c == 32){
+                if(flag == 0){
+                    continue;
+                }else{
+                    break;
+                }
+            }else if( c == 43 || c == 45){
+                if(flag != 0){
+                    break;
+                }
+                flag = 1;
+                stringBuilder.append(c);
+            }else if(c >= 48 && c <= 57){
+                flag = 2;
+                stringBuilder.append(c);
+            }else{
                 break;
             }
         }
-        if("".equals(stringBuilder.toString())){
-            return 0;
-        }
         try {
-            Integer backInteger = Integer.valueOf(stringBuilder.toString());
-            return flag == 0 ? backInteger : flag * backInteger;
+            return Integer.valueOf(stringBuilder.toString());
         }catch (NumberFormatException e){
-            //数字超出最大限制，则返回最大最小值
-            return flag == -1 ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+            if(stringBuilder.length() == 0){
+                return 0;
+            }
+            if(stringBuilder.length() == 1 && (stringBuilder.charAt(0) == 43 || stringBuilder.charAt(0) == 45)){
+                return 0;
+            }
+            if(stringBuilder.charAt(0) == 45){
+                return Integer.MIN_VALUE;
+            }else{
+                return Integer.MAX_VALUE;
+            }
         }
     }
 
