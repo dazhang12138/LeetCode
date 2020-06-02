@@ -1,5 +1,7 @@
 package com.da.leetcode._02;
 
+import com.da.leetcode.utils.Print;
+
 /**
  * @author Da
  * @date 2020/6/2 9:26
@@ -7,7 +9,7 @@ package com.da.leetcode._02;
 public class _11ContainerWithMostWater {
 
     public static void main(String[] args) {
-
+        Print.printObject(maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
     }
 
     /**
@@ -29,8 +31,14 @@ public class _11ContainerWithMostWater {
      * @param height
      * @return
      */
-    public int maxArea(int[] height) {
-
-        return 0;
+    public static int maxArea(int[] height) {
+        int max = 0;
+        for (int i = 0; i < height.length; i++){
+            for (int j = i; j < height.length; j++){
+                int area = (height[i] < height[j] ? height[i] : height[j]) * (j-i);
+                max = area > max ? area : max;
+            }
+        }
+        return max;
     }
 }
