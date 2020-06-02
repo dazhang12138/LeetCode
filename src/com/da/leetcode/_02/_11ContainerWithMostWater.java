@@ -28,8 +28,8 @@ public class _11ContainerWithMostWater {
      * 链接：https://leetcode-cn.com/problems/container-with-most-water
      * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      *
-     * @param height
-     * @return
+     * @param height 容器高度数组
+     * @return 盛水最大面积
      */
     public static int maxArea(int[] height) {
         int max = 0,i = 0,j = height.length-1;

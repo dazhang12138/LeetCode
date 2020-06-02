@@ -25,17 +25,22 @@ public class test {
 //            System.out.println(stringTokenizer.nextToken());
 //        }
 
-        char c = '.';
-        System.out.println(Integer.valueOf(c));
-
-        String s = "123456789";
-        System.out.println(s.substring(8,9));
+//        char c = '.';
+//        System.out.println(Integer.valueOf(c));
+//
+//        String s = "123456789";
+//        System.out.println(s.substring(8,9));
 
 //        Integer integer = Integer.valueOf("+123");
 //        System.out.println(integer);
 //        StringBuilder stringBuilder[] = new StringBuilder[2];
 //        stringBuilder[0].append("123");
 //        System.out.println(stringBuilder[0]);
+
+        int num = 40;
+        int[] f = new int[]{num/1000,num/100%10,num/10%10,num%10};
+
+        Print.printObject(f);
 
     }
 }
