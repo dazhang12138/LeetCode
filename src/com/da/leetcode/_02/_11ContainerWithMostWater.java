@@ -32,11 +32,14 @@ public class _11ContainerWithMostWater {
      * @return
      */
     public static int maxArea(int[] height) {
-        int max = 0;
-        for (int i = 0; i < height.length; i++){
-            for (int j = i; j < height.length; j++){
-                int area = (height[i] < height[j] ? height[i] : height[j]) * (j-i);
-                max = area > max ? area : max;
+        int max = 0,i = 0,j = height.length-1;
+        while (i < j){
+            int area = (height[i] > height[j] ? height[j] : height[i]) * (j-i);
+            max = area > max ? area : max;
+            if(height[i] > height[j]){
+                j--;
+            }else{
+                i++;
             }
         }
         return max;
