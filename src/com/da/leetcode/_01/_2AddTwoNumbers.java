@@ -1,4 +1,4 @@
-package com.da.leetcode.one;
+package com.da.leetcode._01;
 
 import com.da.leetcode.utils.ListNode;
 import com.da.leetcode.utils.Print;

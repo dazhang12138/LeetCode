@@ -1,9 +1,6 @@
-package com.da.leetcode.one;
+package com.da.leetcode._01;
 
 import com.da.leetcode.utils.Print;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Da

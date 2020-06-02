@@ -25,8 +25,11 @@ public class test {
 //            System.out.println(stringTokenizer.nextToken());
 //        }
 
-        char c = '9';
+        char c = '.';
         System.out.println(Integer.valueOf(c));
+
+        String s = "123456789";
+        System.out.println(s.substring(8,9));
 
 //        Integer integer = Integer.valueOf("+123");
 //        System.out.println(integer);
