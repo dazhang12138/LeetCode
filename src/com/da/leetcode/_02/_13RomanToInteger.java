@@ -8,11 +8,11 @@ import com.da.leetcode.utils.Print;
  */
 public class _13RomanToInteger {
     public static void main(String[] args) {
-//        Print.printObject(romanToInt("III"));
-//        Print.printObject(romanToInt("IV"));
-//        Print.printObject(romanToInt("IX"));
-//        Print.printObject(romanToInt("LVIII"));
-//        Print.printObject(romanToInt("MCMXCIV"));
+        Print.printObject(romanToInt("III"));
+        Print.printObject(romanToInt("IV"));
+        Print.printObject(romanToInt("IX"));
+        Print.printObject(romanToInt("LVIII"));
+        Print.printObject(romanToInt("MCMXCIV"));
         Print.printObject(romanToInt("MCDLXXVI"));
     }
 
@@ -63,61 +63,20 @@ public class _13RomanToInteger {
      * @return 对应十进制数字
      */
     public static int romanToInt(String s) {
-        int num = 0;
+        int num = 0,oldNum = Integer.MIN_VALUE,newNum = 0;
         for (int i = s.length()-1; i >=0 ; i--){
             switch (s.charAt(i)){
-                case 'I':
-                    num += 1;break;
-                case 'V':
-                    if((i-1)>=0 && s.charAt(i-1) == 'I'){
-                        num += 4;
-                        i--;
-                    }else{
-                        num += 5;
-                    }
-                    break;
-                case 'X':
-                    if((i-1)>=0 && s.charAt(i-1) == 'I'){
-                        num += 9;
-                        i--;
-                    }else{
-                        num += 10;
-                    }
-                    break;
-                case 'L':
-                    if((i-1)>=0 && s.charAt(i-1) == 'X'){
-                        num += 40;
-                        i--;
-                    }else{
-                        num += 50;
-                    }
-                    break;
-                case 'C':
-                    if((i-1)>=0 && s.charAt(i-1) == 'X'){
-                        num += 90;
-                        i--;
-                    }else{
-                        num += 100;
-                    }
-                    break;
-                case 'D':
-                    if((i-1)>=0 && s.charAt(i-1) == 'C'){
-                        num += 400;
-                        i--;
-                    }else{
-                        num += 500;
-                    }
-                    break;
-                case 'M':
-                    if((i-1)>=0 && s.charAt(i-1) == 'C'){
-                        num += 900;
-                        i--;
-                    }else{
-                        num += 1000;
-                    }
-                    break;
+                case 'I': newNum = 1;break;
+                case 'V': newNum = 5;break;
+                case 'X':newNum = 10;break;
+                case 'L':newNum = 50;break;
+                case 'C':newNum = 100;break;
+                case 'D':newNum = 500;break;
+                case 'M':newNum = 1000;break;
                 default:return 0;
             }
+            num += (oldNum <= newNum) ? newNum : -newNum;
+            oldNum = newNum;
         }
         return num;
     }
