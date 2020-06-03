@@ -42,29 +42,27 @@ public class _14LongestCommonPrefix {
         if(strs.length == 0){
             return "";
         }
-        Queue<Character> queue = new ArrayDeque<>();
+        char[] chars = new char[strs[0].length()];
         for (int i = 0; i < strs[0].length(); i++){
-            queue.add(strs[0].charAt(i));
+            chars[i] = strs[0].charAt(i);
         }
         for (int i = 1; i < strs.length; i++){
-            Queue<Character> queue2 = new ArrayDeque<>();
-            int j = 0;
-            while (queue.peek() != null && j < strs[i].length()){
-                if(queue.poll() == strs[i].charAt(j)){
-                    queue2.add(strs[i].charAt(j));
-                }else {
+            for (int j = 0; j < strs[i].length() && j < chars.length; j++){
+                if(strs[i].charAt(j) != chars[j]){
+                    chars[j] = ';';
                     break;
                 }
-                j++;
             }
-            if(queue2.isEmpty()){
+            if(chars.length == 0 || chars[0] == ';'){
                 return "";
             }
-            queue = queue2;
+            if(chars.length > strs[i].length()){
+                chars[strs[i].length()] = ';';
+            }
         }
         StringBuilder stringBuilder = new StringBuilder();
-        while (queue.peek() != null){
-            stringBuilder.append(queue.poll());
+        for (int i = 0; i < chars.length && chars[i] != ';'; i ++){
+            stringBuilder.append(chars[i]);
         }
         return stringBuilder.toString();
     }
