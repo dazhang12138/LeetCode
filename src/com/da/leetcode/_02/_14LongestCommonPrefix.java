@@ -42,28 +42,21 @@ public class _14LongestCommonPrefix {
         if(strs.length == 0){
             return "";
         }
-        char[] chars = new char[strs[0].length()];
-        for (int i = 0; i < strs[0].length(); i++){
-            chars[i] = strs[0].charAt(i);
-        }
+        String prefix = strs[0];
         for (int i = 1; i < strs.length; i++){
-            for (int j = 0; j < strs[i].length() && j < chars.length; j++){
-                if(strs[i].charAt(j) != chars[j]){
-                    chars[j] = ';';
+            for (int j = 0; j < strs[i].length() && j < prefix.length(); j++){
+                if(strs[i].charAt(j) != prefix.charAt(j)){
+                    prefix = prefix.substring(0,j);
                     break;
                 }
             }
-            if(chars.length == 0 || chars[0] == ';'){
+            if("".equals(prefix)){
                 return "";
             }
-            if(chars.length > strs[i].length()){
-                chars[strs[i].length()] = ';';
+            if(strs[i].length() < prefix.length()){
+                prefix = prefix.substring(0,strs[i].length());
             }
         }
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < chars.length && chars[i] != ';'; i ++){
-            stringBuilder.append(chars[i]);
-        }
-        return stringBuilder.toString();
+        return prefix;
     }
 }
