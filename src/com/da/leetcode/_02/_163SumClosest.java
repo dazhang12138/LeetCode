@@ -43,7 +43,9 @@ public class _163SumClosest {
                 int s = nums[i] + nums[let] + nums[hig];
                 if(s < target){
                     let++;
-                }else{
+                }else if(s == target){
+                    return target;
+                } else{
                     hig--;
                 }
                 min = abs(min-target) < abs(s-target) ? min : s;
