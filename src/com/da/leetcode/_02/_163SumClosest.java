@@ -2,6 +2,8 @@ package com.da.leetcode._02;
 
 import com.da.leetcode.utils.Print;
 
+import java.util.Arrays;
+
 /**
  * @author Da
  * @date 2020/6/4 9:38
@@ -34,14 +36,17 @@ public class _163SumClosest {
      */
     public static int threeSumClosest(int[] nums, int target) {
         int min = Integer.MAX_VALUE-abs(target);
+        Arrays.sort(nums);
         for (int i=0;i<nums.length-2;i++){
-            for (int j = i+1; j < nums.length-1;j++){
-                for (int k = i+2; k < nums.length;k++){
-                    if(k != j){
-                        int s = nums[i] + nums[j] + nums[k];
-                        min = abs(min-target) < abs(s-target) ? min : s;
-                    }
+            int let = i+1, hig = nums.length-1;
+            while (let < hig){
+                int s = nums[i] + nums[let] + nums[hig];
+                if(s < target){
+                    let++;
+                }else{
+                    hig--;
                 }
+                min = abs(min-target) < abs(s-target) ? min : s;
             }
         }
         return min;
