@@ -46,5 +46,23 @@ public class Print {
         printObject(mapStringInt);
         int[] ints = new int[]{2,7,4,8};
         printObject(ints);
+
+        List<List<String>> listString2 = new ArrayList<>();
+        List<String> a = new ArrayList<>();
+        a.add("1231465");
+        a.add("8552225");
+        listString2.add(a);
+        List<String> a2 = new ArrayList<>();
+        a2.add("1231465");
+        a2.add("8552225");
+        listString2.add(a2);
+        printObject(listString2);
+
+        Map<String,List<List<String>>> mapStringInt2 = new HashMap<>();
+        mapStringInt2.put("1",listString2);
+        mapStringInt2.put("2",listString2);
+        printObject(mapStringInt2);
+
+
     }
 }

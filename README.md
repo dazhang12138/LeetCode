@@ -67,6 +67,7 @@
 | 编号 |leetCode题目名称|leetCode地址 |
 |:-|:- | :- |
 |13|罗马数字转整数|[https://leetcode-cn.com/problems/roman-to-integer](https://leetcode-cn.com/problems/roman-to-integer)|
+|14|最长公共前缀|[https://leetcode-cn.com/problems/longest-common-prefix](https://leetcode-cn.com/problems/longest-common-prefix)|
 
 ----------
 
