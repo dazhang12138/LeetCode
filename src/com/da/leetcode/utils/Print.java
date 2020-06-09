@@ -10,6 +10,41 @@ import java.util.*;
  */
 public class Print {
 
+    /**
+     * 打印 描述信息 + 数据 不换行输出
+     * @param msg 描述信息
+     * @param object 数据
+     * @param <T> 数据类型
+     */
+    public static <T> void printObject(String msg,T object){
+        System.out.print("msg:" + msg + ": [ ");
+        printObjectNotLn(object);
+        System.out.println(" ] ");
+    }
+
+    /**
+     * 打印 object 数据 不换行
+     * @param object 数据
+     * @param <T> 数据类型
+     */
+    public static <T> void printObjectNotLn(T object){
+        if (object == null){
+            System.out.print("NULL");
+            return;
+        }
+
+        if(object.getClass().isArray()){
+            System.out.print(arraysToString(object));
+        }else{
+            System.out.print(object.toString());
+        }
+    }
+
+    /**
+     * 打印 object 数据 换行
+     * @param object 数据
+     * @param <T> 数据类型
+     */
     public static <T> void printObject(T object){
         if (object == null){
             System.out.println("NULL");
@@ -17,21 +52,31 @@ public class Print {
         }
 
         if(object.getClass().isArray()){
-            StringBuilder strb = new StringBuilder();
-            strb.append("[ ");
-            int len = Array.getLength(object);
-            for (int i = 0; i < len; i++){
-                strb.append(Array.get(object,i));
-                if(i == len-1){
-                    strb.append("]");
-                }else{
-                    strb.append(" ,");
-                }
-            }
-            System.out.println(strb.toString());
+            System.out.println(arraysToString(object));
         }else{
             System.out.println(object.toString());
         }
+    }
+
+    /**
+     * 处理 数组类型 数据拼装成String
+     * @param object 数据
+     * @param <T> 数组类型数据
+     * @return 拼装后String数据
+     */
+    private static <T> String arraysToString(T object){
+        StringBuilder strb = new StringBuilder();
+        strb.append("[ ");
+        int len = Array.getLength(object);
+        for (int i = 0; i < len; i++){
+            strb.append(Array.get(object,i));
+            if(i == len-1){
+                strb.append("]");
+            }else{
+                strb.append(" ,");
+            }
+        }
+        return strb.toString();
     }
 
     public static void main(String[] args) {
