@@ -104,6 +104,7 @@
 |:-|:- | :- |
 |21|合并两个有序链表|[https://leetcode-cn.com/problems/merge-two-sorted-lists](https://leetcode-cn.com/problems/merge-two-sorted-lists)|
 |22|括号生成|[https://leetcode-cn.com/problems/generate-parentheses](https://leetcode-cn.com/problems/generate-parentheses)|
+|23|合并K个排序链表|[https://leetcode-cn.com/problems/merge-k-sorted-lists](https://leetcode-cn.com/problems/merge-k-sorted-lists)|
 
 ----------
 
