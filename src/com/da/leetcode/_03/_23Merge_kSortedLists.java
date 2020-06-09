@@ -3,8 +3,7 @@ package com.da.leetcode._03;
 import com.da.leetcode.utils.ListNode;
 import com.da.leetcode.utils.Print;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Da
@@ -44,11 +43,22 @@ public class _23Merge_kSortedLists {
      * @return 合并后的排序链表
      */
     public static ListNode mergeKLists(ListNode[] lists) {
-        ListNode back = null;
-        for (int i = 0; i < lists.length ; i++){
-            back = _21MergeTwoSortedLists.mergeTwoLists(lists[i], back);
+        Queue<ListNode> priorityQueue = new PriorityQueue<ListNode>((o1, o2) -> o1.val-o2.val);
+        for (int i = 0; i < lists.length; i++){
+            while (lists[i]!=null){
+                priorityQueue.add(lists[i]);
+                lists[i] = lists[i].next;
+            }
         }
-        return back;
+        ListNode back = new ListNode(0);
+        ListNode head = back;
+        while (priorityQueue.peek() != null){
+            ListNode poll = priorityQueue.poll();
+            back.next = poll;
+            back = back.next;
+        }
+        back.next = null;
+        return head.next;
     }
 
 }
