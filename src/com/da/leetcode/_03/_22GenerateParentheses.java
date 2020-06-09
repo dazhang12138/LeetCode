@@ -10,7 +10,7 @@ import java.util.*;
  */
 public class _22GenerateParentheses {
     public static void main(String[] args) {
-        Print.printObject("生成4对括号的所有有效组合",generateParenthesis(1));
+        Print.printObject("生成4对括号的所有有效组合",generateParenthesis2(3));
     }
 
     /**
@@ -75,4 +75,33 @@ public class _22GenerateParentheses {
         });
         integerSetMap.put(n,set);
     }
+
+
+    /**
+     * 深度优先树回溯解法
+     * @param n 生成括号对数
+     * @return 所有有效的括号组合
+     */
+    public static List<String> generateParenthesis2(int n) {
+        List<String> list = new ArrayList<>();
+        generate2(n,n,"",list);
+        return list;
+    }
+
+
+    private static void generate2(int left,int right,String present,List<String> list){
+        if(left == 0 && right == 0){
+            list.add(present);
+        }
+        if(left > right){
+            return;
+        }
+        if(left > 0) {
+            generate2(left-1, right, present+"(", list);
+        }
+        if(right > 0){
+            generate2(left,right-1,present+")",list);
+        }
+    }
+
 }
