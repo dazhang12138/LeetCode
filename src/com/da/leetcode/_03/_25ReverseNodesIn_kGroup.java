@@ -20,6 +20,14 @@ public class _25ReverseNodesIn_kGroup {
         Print.printObject("交换前链表",head);
         Print.printObject("交换后链表",reverseKGroup(head,3));
     }
+    /**
+     * 思路：使用递归方法
+     *
+     * 先找出当前链表的第一个k组链表。头为pre；尾为end；
+     * 尾部end进行递归循环处理后续翻转
+     * 翻转pre链表reverse方法
+     * 将翻转后的pre与递归处理后续的链表的end连接得到back最终翻转每组k个节点的链表
+     */
 
     /**
      * 给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。
