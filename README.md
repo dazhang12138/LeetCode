@@ -129,5 +129,6 @@
 | 编号 |leetCode题目名称|leetCode地址 |
 |:-|:- | :- |
 |26|删除排序数组中的重复项|[https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array)|
+|27|移除元素|[https://leetcode-cn.com/problems/remove-element](https://leetcode-cn.com/problems/remove-element)|
 
 ----------
