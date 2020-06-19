@@ -123,3 +123,11 @@
 |25|k个一组翻转链表|[https://leetcode-cn.com/problems/reverse-nodes-in-k-group](https://leetcode-cn.com/problems/reverse-nodes-in-k-group)|
 
 ----------
+
+## 更新时间：2020年06月19日##
+
+| 编号 |leetCode题目名称|leetCode地址 |
+|:-|:- | :- |
+|26|删除排序数组中的重复项|[https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array)|
+
+----------
