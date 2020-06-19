@@ -40,5 +40,6 @@
 | 23 | 25 | [k个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group) | 2020年06月12日 | [_03/_25ReverseNodesIn_kGroup](https://github.com/dazhang12138/LeetCode/blob/master/src/com/da/leetcode/_03/_25ReverseNodesIn_kGroup.java) |
 | 24 | 26 | [删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array) | 2020年06月19日 | [_03/_26RemoveDuplicatesFromSortedArray](https://github.com/dazhang12138/LeetCode/blob/master/src/com/da/leetcode/_03/_26RemoveDuplicatesFromSortedArray.java) |
 | 25 | 27 | [移除元素](https://leetcode-cn.com/problems/remove-element) | 2020年06月19日 | [_03/_27RemoveElement](https://github.com/dazhang12138/LeetCode/blob/master/src/com/da/leetcode/_03/_27RemoveElement.java) |
+| 26 | 28 | [实现strStr()](https://leetcode-cn.com/problems/implement-strstr) | 2020年06月19日 | [_03/_28ImplementStr](https://github.com/dazhang12138/LeetCode/blob/master/src/com/da/leetcode/_03/_28ImplementStr.java) |
 
 ----------
